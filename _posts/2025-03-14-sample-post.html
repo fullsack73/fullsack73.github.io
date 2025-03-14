@@ -8,7 +8,7 @@ background: '/img/oiia-oiiaoiia.gif'
 
 <p>this is content</p>
 
-<button class="rick-button" herf="https://youtu.be/dQw4w9WgXcQ?si=GkHiExp03wMcv8Pf">wow a button</button>
+<a class="rick-button" href="https://youtu.be/dQw4w9WgXcQ?si=GkHiExp03wMcv8Pf" alt="wow a button"></a>
 
 <br><br>
 
@@ -16,31 +16,38 @@ background: '/img/oiia-oiiaoiia.gif'
 
 
 <style>
-.rick-button{
-  cursor: pointer ;
-  text-align: center;
-  text-decoration: underline;
-  font-size: 32px;
-  font-family: monospace;
-  letter-spacing: 5px;
-  animation: colorRotate 6s linear 0s infinite;
+a {
+  text-decoration:none;
+  color:#FFF;
+}
+.rick-button {
+  width:calc(20vw + 6px);
+  height:calc(8vw + 6px);
+  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-transform:uppercase;
+  font-size:3vw;
+  font-weight:bold;
+}
+.rick-button:after {
+  content:attr(alt);
+  width:20vw;
+  height:8vw;
+  background-color:#191919;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.rick-button:hover {
+  animation:slidebg 2s linear infinite;
 }
 
-@keyframes colorRotate {
-  from {
-    color: #6666ff;
-  }
-  10% {
-    color: #0099ff;
-  }
-  50% {
-    color: #00ff00;
-  }
-  75% {
-    color: #ff3399;
-  }
-  100% {
-    color: #6666ff;
+@keyframes slidebg {
+  to {
+    background-position:20vw;
   }
 }
 </style>
